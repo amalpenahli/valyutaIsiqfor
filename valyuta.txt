@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class Main {
+    public static void main(String[] args) {
+       Scanner scan  = new Scanner(System.in);
+        System.out.println("valyuta");
+        String val = scan.nextLine();
+        System.out.println("hedef valyuta");
+        String hedVal = scan.nextLine();
+        System.out.println("mebleg");
+        int mebleg = scan.nextInt();
+
+        switch(val) {
+            case "USD":
+                switch (hedVal) {
+                    case "AZN":
+                        System.out.println(mebleg * 1.7);
+                    case "EUR":
+                        System.out.println(mebleg * 0.92);
+
+                }
+               break;
+            case "EUR":
+                switch (hedVal) {
+                    case "AZN":
+                        System.out.println(mebleg * 1.85);
+                    case "USD":
+                        System.out.println(mebleg / 0.92);
+
+                }
+            break;
+            case "AZN":
+                switch (hedVal) {
+                    case "EUR":
+                        System.out.println(mebleg / 1.85);
+                    case "USD":
+                        System.out.println(mebleg *0.58);
+
+                }
+                break;
+            default:
+                System.out.println("bele valyuta yoxdur");
+        }
+
+    }
+}
